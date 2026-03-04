@@ -9,12 +9,12 @@
   <script defer src="https://analytics.code-lieshout.nl/script.js" data-website-id="9c93f6ff-1f08-4216-83bd-375ba359c82a"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400:wght@400;700&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: { extend: {
-        colors: { primary: '#DC2626', 'primary-light': '#F87171', cta: '#CA8A04', 'cta-hover': '#A16207', cream: '#FEF2F2', dark: '#450A0A', 'warm-gray': '#78716C' },
-        fontFamily: { display: ['Playfair Display SC', 'serif'], sans: ['Karla', 'sans-serif'] },
+        colors: { terracotta: '#C67B5C', sand: '#D4C4A8', clay: '#B5651D', 'dark-brown': '#3E2723', cream: '#F5F0E1', 'warm-red': '#C0392B', 'warm-gold': '#D4A017', olive: '#6B7B3C' },
+        fontFamily: { display: ['Playfair Display', 'serif'], sans: ['Karla', 'sans-serif'] },
       }}
     }
   </script>
@@ -28,17 +28,17 @@
     .train-track::before { top: 4px; } .train-track::after { bottom: 4px; }
   </style>
 </head>
-<body class="font-sans text-dark bg-cream">
+<body class="font-sans text-dark-brown bg-cream">
   <!-- Navbar -->
   <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm">
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between h-16">
-      <a href="index.html" class="flex items-center gap-3"><img src="images/logo.png" alt="Bistro 't Spoortje logo" class="h-12 w-auto"><span class="font-display text-lg text-dark hidden sm:block">Bistro 't Spoortje</span></a>
+      <a href="index.html" class="flex items-center gap-3"><img src="images/logo.png" alt="Bistro 't Spoortje logo" class="h-12 w-auto"><span class="font-display text-lg text-dark-brown hidden sm:block">Bistro 't Spoortje</span></a>
       <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="index.html" class="text-dark hover:text-primary transition-colors duration-200 cursor-pointer">Home</a>
-        <a href="menu.html" class="text-dark hover:text-primary transition-colors duration-200 cursor-pointer">Menu</a>
-        <a href="galerij.html" class="text-dark hover:text-primary transition-colors duration-200 cursor-pointer">Galerij</a>
-        <a href="contact.html" class="text-primary cursor-pointer">Contact</a>
-        <a href="https://www.spoortje-ravenstein.nl/order.php" target="_blank" class="bg-cta hover:bg-cta-hover text-white px-5 py-2.5 rounded-full font-semibold transition-colors duration-200 cursor-pointer min-h-[44px] flex items-center">Bestellen</a>
+        <a href="index.html" class="text-dark-brown hover:text-terracotta transition-colors duration-200 cursor-pointer">Home</a>
+        <a href="menu.html" class="text-dark-brown hover:text-terracotta transition-colors duration-200 cursor-pointer">Menu</a>
+        <a href="galerij.html" class="text-dark-brown hover:text-terracotta transition-colors duration-200 cursor-pointer">Galerij</a>
+        <a href="contact.html" class="text-terracotta cursor-pointer">Contact</a>
+        <a href="https://www.spoortje-ravenstein.nl/order.php" target="_blank" class="bg-clay hover:bg-clay-hover text-white px-5 py-2.5 rounded-full font-semibold transition-colors duration-200 cursor-pointer min-h-[44px] flex items-center">Bestellen</a>
       </div>
       <button id="menuToggle" class="md:hidden cursor-pointer min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Menu openen">
         <svg class="w-7 h-7 text-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -46,19 +46,19 @@
     </div>
     <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
       <div class="px-4 py-4 flex flex-col gap-4">
-        <a href="index.html" class="text-dark cursor-pointer py-2">Home</a>
-        <a href="menu.html" class="text-dark cursor-pointer py-2">Menu</a>
-        <a href="galerij.html" class="text-dark cursor-pointer py-2">Galerij</a>
-        <a href="contact.html" class="text-primary font-medium cursor-pointer py-2">Contact</a>
-        <a href="https://www.spoortje-ravenstein.nl/order.php" target="_blank" class="bg-cta text-white px-5 py-3 rounded-full font-semibold text-center cursor-pointer">Bestellen</a>
+        <a href="index.html" class="text-dark-brown cursor-pointer py-2">Home</a>
+        <a href="menu.html" class="text-dark-brown cursor-pointer py-2">Menu</a>
+        <a href="galerij.html" class="text-dark-brown cursor-pointer py-2">Galerij</a>
+        <a href="contact.html" class="text-terracotta font-medium cursor-pointer py-2">Contact</a>
+        <a href="https://www.spoortje-ravenstein.nl/order.php" target="_blank" class="bg-clay text-white px-5 py-3 rounded-full font-semibold text-center cursor-pointer">Bestellen</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="pt-24 pb-12 bg-dark text-white">
+  <section class="pt-24 pb-12 bg-dark-brown text-white">
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-      <span class="text-cta font-semibold text-sm uppercase tracking-widest">Neem Contact Op</span>
+      <span class="text-warm-gold font-semibold text-sm uppercase tracking-widest">Neem Contact Op</span>
       <h1 class="font-display text-4xl md:text-5xl mt-2 mb-4">Contact</h1>
       <p class="text-white/70 max-w-2xl mx-auto">Vragen, opmerkingen of wil je een bestelling plaatsen? We helpen je graag!</p>
     </div>
@@ -69,38 +69,38 @@
     <div class="grid md:grid-cols-2 gap-12">
       <!-- Info -->
       <div class="animate-on-scroll">
-        <h2 class="font-display text-2xl text-dark mb-6">Gegevens</h2>
+        <h2 class="font-display text-2xl text-dark-brown mb-6">Gegevens</h2>
         <div class="space-y-6">
           <div class="flex items-start gap-4">
-            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <div class="w-12 h-12 bg-warm-red/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             </div>
             <div>
               <h3 class="font-semibold text-lg">Adres</h3>
-              <p class="text-warm-gray">Stationssingel 122<br>5371 BB Ravenstein</p>
-              <p class="text-warm-gray text-sm mt-1">Direct naast Station Ravenstein</p>
-              <a href="https://www.google.com/maps/place/Stationssingel+122+5371BB+Ravenstein" target="_blank" class="text-primary hover:text-primary-light text-sm font-medium mt-2 inline-flex items-center gap-1 cursor-pointer min-h-[44px]">
+              <p class="text-dark-brown/60">Stationssingel 122<br>5371 BB Ravenstein</p>
+              <p class="text-dark-brown/60 text-sm mt-1">Direct naast Station Ravenstein</p>
+              <a href="https://www.google.com/maps/place/Stationssingel+122+5371BB+Ravenstein" target="_blank" class="text-terracotta hover:text-terracotta-light text-sm font-medium mt-2 inline-flex items-center gap-1 cursor-pointer min-h-[44px]">
                 Route plannen
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
               </a>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+            <div class="w-12 h-12 bg-warm-red/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
             </div>
             <div>
               <h3 class="font-semibold text-lg">Telefoon</h3>
-              <a href="tel:+31486411065" class="text-primary hover:text-primary-light text-xl font-bold transition-colors duration-200 cursor-pointer">0486 - 411 065</a>
+              <a href="tel:+31486411065" class="text-terracotta hover:text-terracotta-light text-xl font-bold transition-colors duration-200 cursor-pointer">0486 - 411 065</a>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <div class="w-12 h-12 bg-warm-red/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             </div>
             <div>
               <h3 class="font-semibold text-lg">Openingstijden</h3>
-              <table class="text-warm-gray text-sm mt-2">
+              <table class="text-dark-brown/60 text-sm mt-2">
                 <tr><td class="pr-4 py-1">Maandag</td><td>09:00 – 17:00</td></tr>
                 <tr><td class="pr-4 py-1">Dinsdag</td><td>12:00 – 22:00</td></tr>
                 <tr><td class="pr-4 py-1">Woensdag</td><td>12:00 – 22:00</td></tr>
@@ -109,20 +109,20 @@
                 <tr><td class="pr-4 py-1">Zaterdag</td><td>12:00 – 22:00</td></tr>
                 <tr><td class="pr-4 py-1">Zondag</td><td>12:00 – 22:00</td></tr>
               </table>
-              <div class="bg-cta/10 rounded-lg p-3 mt-3">
+              <div class="bg-clay/10 rounded-lg p-3 mt-3">
                 <p class="text-sm font-medium">Bezorging: 15:00 – 21:30</p>
                 <p class="text-sm font-medium">Afhalen: 12:00 – 21:45</p>
               </div>
             </div>
           </div>
           <div class="flex items-start gap-4">
-            <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-              <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <div class="w-12 h-12 bg-warm-red/10 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-terracotta" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             </div>
             <div>
               <h3 class="font-semibold text-lg">Overig</h3>
-              <p class="text-warm-gray text-sm">KvK: 55013309</p>
-              <a href="https://www.facebook.com/spoortjeravenstein/" target="_blank" class="text-primary hover:text-primary-light text-sm font-medium mt-1 inline-flex items-center gap-1 cursor-pointer min-h-[44px]">
+              <p class="text-dark-brown/60 text-sm">KvK: 55013309</p>
+              <a href="https://www.facebook.com/spoortjeravenstein/" target="_blank" class="text-terracotta hover:text-terracotta-light text-sm font-medium mt-1 inline-flex items-center gap-1 cursor-pointer min-h-[44px]">
                 Facebook
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
               </a>
@@ -172,7 +172,7 @@
               <label class="text-sm font-medium block mb-1">Bericht</label>
               <textarea name="bericht" rows="4" required class="w-full border border-gray-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-colors resize-y" placeholder="Uw bericht..."></textarea>
             </div>
-            <button type="submit" class="bg-primary hover:bg-primary-light text-white px-8 py-3 rounded-full font-semibold transition-colors duration-200 cursor-pointer min-h-[44px] inline-flex items-center gap-2">
+            <button type="submit" class="bg-warm-red hover:bg-warm-red-light text-white px-8 py-3 rounded-full font-semibold transition-colors duration-200 cursor-pointer min-h-[44px] inline-flex items-center gap-2">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
               Versturen
             </button>
@@ -183,7 +183,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white py-12">
+  <footer class="bg-dark-brown text-white py-12">
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
       <div class="grid md:grid-cols-4 gap-8">
         <div><img src="images/logo.png" alt="Bistro 't Spoortje logo" class="h-16 w-auto mb-4"><p class="text-white/60 text-sm">Pizzeria · Cafetaria · Döner · Shoarma</p></div>

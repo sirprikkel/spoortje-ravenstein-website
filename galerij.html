@@ -9,12 +9,12 @@
   <script defer src="https://analytics.code-lieshout.nl/script.js" data-website-id="9c93f6ff-1f08-4216-83bd-375ba359c82a"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400:wght@400;700&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: { extend: {
-        colors: { primary: '#DC2626', 'primary-light': '#F87171', cta: '#CA8A04', 'cta-hover': '#A16207', cream: '#FEF2F2', dark: '#450A0A', 'warm-gray': '#78716C' },
-        fontFamily: { display: ['Playfair Display SC', 'serif'], sans: ['Karla', 'sans-serif'] },
+        colors: { terracotta: '#C67B5C', sand: '#D4C4A8', clay: '#B5651D', 'dark-brown': '#3E2723', cream: '#F5F0E1', 'warm-red': '#C0392B', 'warm-gold': '#D4A017', olive: '#6B7B3C' },
+        fontFamily: { display: ['Playfair Display', 'serif'], sans: ['Karla', 'sans-serif'] },
       }}
     }
   </script>
@@ -32,17 +32,17 @@
     #lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 8px; }
   </style>
 </head>
-<body class="font-sans text-dark bg-cream">
+<body class="font-sans text-dark-brown bg-cream">
   <!-- Navbar -->
   <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm">
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between h-16">
-      <a href="index.html" class="flex items-center gap-3"><img src="images/logo.png" alt="Bistro 't Spoortje logo" class="h-12 w-auto"><span class="font-display text-lg text-dark hidden sm:block">Bistro 't Spoortje</span></a>
+      <a href="index.html" class="flex items-center gap-3"><img src="images/logo.png" alt="Bistro 't Spoortje logo" class="h-12 w-auto"><span class="font-display text-lg text-dark-brown hidden sm:block">Bistro 't Spoortje</span></a>
       <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="index.html" class="text-dark hover:text-primary transition-colors duration-200 cursor-pointer">Home</a>
-        <a href="menu.html" class="text-dark hover:text-primary transition-colors duration-200 cursor-pointer">Menu</a>
-        <a href="galerij.html" class="text-primary cursor-pointer">Galerij</a>
-        <a href="contact.html" class="text-dark hover:text-primary transition-colors duration-200 cursor-pointer">Contact</a>
-        <a href="https://www.spoortje-ravenstein.nl/order.php" target="_blank" class="bg-cta hover:bg-cta-hover text-white px-5 py-2.5 rounded-full font-semibold transition-colors duration-200 cursor-pointer min-h-[44px] flex items-center">Bestellen</a>
+        <a href="index.html" class="text-dark-brown hover:text-terracotta transition-colors duration-200 cursor-pointer">Home</a>
+        <a href="menu.html" class="text-dark-brown hover:text-terracotta transition-colors duration-200 cursor-pointer">Menu</a>
+        <a href="galerij.html" class="text-terracotta cursor-pointer">Galerij</a>
+        <a href="contact.html" class="text-dark-brown hover:text-terracotta transition-colors duration-200 cursor-pointer">Contact</a>
+        <a href="https://www.spoortje-ravenstein.nl/order.php" target="_blank" class="bg-clay hover:bg-clay-hover text-white px-5 py-2.5 rounded-full font-semibold transition-colors duration-200 cursor-pointer min-h-[44px] flex items-center">Bestellen</a>
       </div>
       <button id="menuToggle" class="md:hidden cursor-pointer min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Menu openen">
         <svg class="w-7 h-7 text-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -50,19 +50,19 @@
     </div>
     <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
       <div class="px-4 py-4 flex flex-col gap-4">
-        <a href="index.html" class="text-dark cursor-pointer py-2">Home</a>
-        <a href="menu.html" class="text-dark cursor-pointer py-2">Menu</a>
-        <a href="galerij.html" class="text-primary font-medium cursor-pointer py-2">Galerij</a>
-        <a href="contact.html" class="text-dark cursor-pointer py-2">Contact</a>
-        <a href="https://www.spoortje-ravenstein.nl/order.php" target="_blank" class="bg-cta text-white px-5 py-3 rounded-full font-semibold text-center cursor-pointer">Bestellen</a>
+        <a href="index.html" class="text-dark-brown cursor-pointer py-2">Home</a>
+        <a href="menu.html" class="text-dark-brown cursor-pointer py-2">Menu</a>
+        <a href="galerij.html" class="text-terracotta font-medium cursor-pointer py-2">Galerij</a>
+        <a href="contact.html" class="text-dark-brown cursor-pointer py-2">Contact</a>
+        <a href="https://www.spoortje-ravenstein.nl/order.php" target="_blank" class="bg-clay text-white px-5 py-3 rounded-full font-semibold text-center cursor-pointer">Bestellen</a>
       </div>
     </div>
   </nav>
 
   <!-- Hero -->
-  <section class="pt-24 pb-12 bg-dark text-white">
+  <section class="pt-24 pb-12 bg-dark-brown text-white">
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
-      <span class="text-cta font-semibold text-sm uppercase tracking-widest">In Beeld</span>
+      <span class="text-warm-gold font-semibold text-sm uppercase tracking-widest">In Beeld</span>
       <h1 class="font-display text-4xl md:text-5xl mt-2 mb-4">Galerij</h1>
       <p class="text-white/70 max-w-2xl mx-auto">Een kijkje in onze keuken, het restaurant en de locatie naast Station Ravenstein</p>
     </div>
@@ -72,7 +72,7 @@
   <!-- Restaurant & Locatie -->
   <section class="py-12 md:py-16">
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-      <h2 class="font-display text-2xl text-dark mb-6 animate-on-scroll">Restaurant & Locatie</h2>
+      <h2 class="font-display text-2xl text-dark-brown mb-6 animate-on-scroll">Restaurant & Locatie</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         <div class="animate-on-scroll rounded-xl overflow-hidden aspect-square cursor-pointer gallery-img">
           <img src="images/google_place_5.jpg" alt="Bistro 't Spoortje naast Station Ravenstein met NS trein" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
@@ -97,7 +97,7 @@
   <!-- Ons Eten -->
   <section class="py-12 md:py-16 bg-white">
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-      <h2 class="font-display text-2xl text-dark mb-6 animate-on-scroll">Ons Eten</h2>
+      <h2 class="font-display text-2xl text-dark-brown mb-6 animate-on-scroll">Ons Eten</h2>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         <div class="animate-on-scroll rounded-xl overflow-hidden aspect-square cursor-pointer gallery-img">
           <img src="images/google_place_4.jpg" alt="Verse pizza uit eigen keuken" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
@@ -142,7 +142,7 @@
   <!-- Keuken -->
   <section class="py-12 md:py-16">
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
-      <h2 class="font-display text-2xl text-dark mb-6 animate-on-scroll">Achter de Schermen</h2>
+      <h2 class="font-display text-2xl text-dark-brown mb-6 animate-on-scroll">Achter de Schermen</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div class="animate-on-scroll rounded-xl overflow-hidden aspect-video cursor-pointer gallery-img">
           <img src="images/google_place_5.jpg" alt="Onze keuken vol verse pizza's" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
@@ -152,10 +152,10 @@
   </section>
 
   <!-- CTA -->
-  <section class="py-12 bg-gradient-to-r from-primary to-primary-light text-white">
+  <section class="py-12 bg-gradient-to-r from-warm-red to-terracotta text-white">
     <div class="max-w-4xl mx-auto px-4 text-center">
       <h2 class="font-display text-3xl mb-4">Zin Gekregen?</h2>
-      <a href="https://www.spoortje-ravenstein.nl/order.php" target="_blank" class="bg-cta hover:bg-cta-hover text-white px-8 py-4 rounded-full text-lg font-bold transition-colors duration-200 cursor-pointer min-h-[44px] inline-flex items-center gap-2">
+      <a href="https://www.spoortje-ravenstein.nl/order.php" target="_blank" class="bg-clay hover:bg-clay-hover text-white px-8 py-4 rounded-full text-lg font-bold transition-colors duration-200 cursor-pointer min-h-[44px] inline-flex items-center gap-2">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/></svg>
         Nu Bestellen
       </a>
@@ -163,7 +163,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white py-12">
+  <footer class="bg-dark-brown text-white py-12">
     <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
       <div class="grid md:grid-cols-4 gap-8">
         <div><img src="images/logo.png" alt="Bistro 't Spoortje logo" class="h-16 w-auto mb-4"><p class="text-white/60 text-sm">Pizzeria · Cafetaria · Döner · Shoarma</p></div>
