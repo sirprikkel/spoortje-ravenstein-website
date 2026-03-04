@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerij — Bistro 't Spoortje Ravenstein</title>
+  <meta name="description" content="Foto's van Bistro 't Spoortje — ons eten, het restaurant en de locatie naast Station Ravenstein.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://analytics.code-lieshout.nl/script.js" data-website-id="9c93f6ff-1f08-4216-83bd-375ba359c82a"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { primary: '#DC2626', 'primary-light': '#F87171', cta: '#CA8A04', 'cta-hover': '#A16207', cream: '#FEF2F2', dark: '#450A0A', 'warm-gray': '#78716C' },
+        fontFamily: { display: ['Playfair Display SC', 'serif'], sans: ['Karla', 'sans-serif'] },
+      }}
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { .animate-on-scroll { opacity: 1 !important; transform: none !important; } }
+    .animate-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+    .train-track { position: relative; height: 20px; background: repeating-linear-gradient(90deg, transparent, transparent 20px, #78716C 20px, #78716C 22px); }
+    .train-track::before, .train-track::after { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: #78716C; }
+    .train-track::before { top: 4px; } .train-track::after { bottom: 4px; }
+    /* Lightbox */
+    #lightbox { display: none; position: fixed; inset: 0; z-index: 100; background: rgba(0,0,0,0.9); align-items: center; justify-content: center; }
+    #lightbox.active { display: flex; }
+    #lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; border-radius: 8px; }
+  </style>
+</head>
+<body class="font-sans text-dark bg-cream">
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-3"><img src="images/logo.png" alt="Bistro 't Spoortje logo" class="h-12 w-auto"><span class="font-display text-lg text-dark hidden sm:block">Bistro 't Spoortje</span></a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="index.html" class="text-dark hover:text-primary transition-colors duration-200 cursor-pointer">Home</a>
+        <a href="menu.html" class="text-dark hover:text-primary transition-colors duration-200 cursor-pointer">Menu</a>
+        <a href="galerij.html" class="text-primary cursor-pointer">Galerij</a>
+        <a href="contact.html" class="text-dark hover:text-primary transition-colors duration-200 cursor-pointer">Contact</a>
+        <a href="https://www.spoortje-ravenstein.nl/order.php" target="_blank" class="bg-cta hover:bg-cta-hover text-white px-5 py-2.5 rounded-full font-semibold transition-colors duration-200 cursor-pointer min-h-[44px] flex items-center">Bestellen</a>
+      </div>
+      <button id="menuToggle" class="md:hidden cursor-pointer min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Menu openen">
+        <svg class="w-7 h-7 text-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+      <div class="px-4 py-4 flex flex-col gap-4">
+        <a href="index.html" class="text-dark cursor-pointer py-2">Home</a>
+        <a href="menu.html" class="text-dark cursor-pointer py-2">Menu</a>
+        <a href="galerij.html" class="text-primary font-medium cursor-pointer py-2">Galerij</a>
+        <a href="contact.html" class="text-dark cursor-pointer py-2">Contact</a>
+        <a href="https://www.spoortje-ravenstein.nl/order.php" target="_blank" class="bg-cta text-white px-5 py-3 rounded-full font-semibold text-center cursor-pointer">Bestellen</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-24 pb-12 bg-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+      <span class="text-cta font-semibold text-sm uppercase tracking-widest">In Beeld</span>
+      <h1 class="font-display text-4xl md:text-5xl mt-2 mb-4">Galerij</h1>
+      <p class="text-white/70 max-w-2xl mx-auto">Een kijkje in onze keuken, het restaurant en de locatie naast Station Ravenstein</p>
+    </div>
+  </section>
+  <div class="train-track"></div>
+
+  <!-- Restaurant & Locatie -->
+  <section class="py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <h2 class="font-display text-2xl text-dark mb-6 animate-on-scroll">Restaurant & Locatie</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <div class="animate-on-scroll rounded-xl overflow-hidden aspect-square cursor-pointer gallery-img">
+          <img src="images/google_place_5.jpg" alt="Bistro 't Spoortje naast Station Ravenstein met NS trein" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="animate-on-scroll rounded-xl overflow-hidden aspect-square cursor-pointer gallery-img">
+          <img src="images/google_place_3.jpg" alt="Exterieur Bistro 't Spoortje met terras" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="animate-on-scroll rounded-xl overflow-hidden aspect-square cursor-pointer gallery-img">
+          <img src="images/google_place_6.jpg" alt="Gevel en signage Bistro 't Spoortje" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy"
+          onerror="this.parentElement.style.display='none'">
+        </div>
+        <div class="animate-on-scroll rounded-xl overflow-hidden aspect-square cursor-pointer gallery-img">
+          <img src="images/google_place_1.jpg" alt="Sfeerbeeld restaurant bij het station" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="animate-on-scroll rounded-xl overflow-hidden aspect-square cursor-pointer gallery-img">
+          <img src="images/google_place_2.jpg" alt="Interieur en sfeer" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ons Eten -->
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <h2 class="font-display text-2xl text-dark mb-6 animate-on-scroll">Ons Eten</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="animate-on-scroll rounded-xl overflow-hidden aspect-square cursor-pointer gallery-img">
+          <img src="images/google_place_4.jpg" alt="Verse pizza uit eigen keuken" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="animate-on-scroll rounded-xl overflow-hidden aspect-square cursor-pointer gallery-img">
+          <img src="images/bg4.jpg" alt="Pizza met verse toppings" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="animate-on-scroll rounded-xl overflow-hidden aspect-square cursor-pointer gallery-img">
+          <img src="images/product_1.webp" alt="Gerecht van de kaart" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="animate-on-scroll rounded-xl overflow-hidden aspect-square cursor-pointer gallery-img">
+          <img src="images/product_2.webp" alt="Menu item" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="animate-on-scroll rounded-xl overflow-hidden aspect-square cursor-pointer gallery-img">
+          <img src="images/product_3.webp" alt="Vers bereid gerecht" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="animate-on-scroll rounded-xl overflow-hidden aspect-square cursor-pointer gallery-img">
+          <img src="images/product_4.webp" alt="Gerecht uit de keuken" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="animate-on-scroll rounded-xl overflow-hidden aspect-square cursor-pointer gallery-img">
+          <img src="images/product_5.webp" alt="Populair menu item" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="animate-on-scroll rounded-xl overflow-hidden aspect-square cursor-pointer gallery-img">
+          <img src="images/product_6.webp" alt="Lekker eten" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="animate-on-scroll rounded-xl overflow-hidden aspect-square cursor-pointer gallery-img">
+          <img src="images/product_7.webp" alt="Heerlijk gerecht" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="animate-on-scroll rounded-xl overflow-hidden aspect-square cursor-pointer gallery-img">
+          <img src="images/product_8.webp" alt="Vers van de grill" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="animate-on-scroll rounded-xl overflow-hidden aspect-square cursor-pointer gallery-img">
+          <img src="images/product_9.webp" alt="Smakelijk gerecht" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+        </div>
+        <div class="animate-on-scroll rounded-xl overflow-hidden aspect-square cursor-pointer gallery-img">
+          <img src="images/product_10.webp" alt="Van de kaart" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Keuken -->
+  <section class="py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <h2 class="font-display text-2xl text-dark mb-6 animate-on-scroll">Achter de Schermen</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="animate-on-scroll rounded-xl overflow-hidden aspect-video cursor-pointer gallery-img">
+          <img src="images/google_place_5.jpg" alt="Onze keuken vol verse pizza's" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-12 bg-gradient-to-r from-primary to-primary-light text-white">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="font-display text-3xl mb-4">Zin Gekregen?</h2>
+      <a href="https://www.spoortje-ravenstein.nl/order.php" target="_blank" class="bg-cta hover:bg-cta-hover text-white px-8 py-4 rounded-full text-lg font-bold transition-colors duration-200 cursor-pointer min-h-[44px] inline-flex items-center gap-2">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/></svg>
+        Nu Bestellen
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div><img src="images/logo.png" alt="Bistro 't Spoortje logo" class="h-16 w-auto mb-4"><p class="text-white/60 text-sm">Pizzeria · Cafetaria · Döner · Shoarma</p></div>
+        <div><h4 class="font-display text-sm mb-4">Menu</h4><ul class="space-y-2 text-white/60 text-sm"><li><a href="menu.html#pizzas" class="hover:text-white cursor-pointer">Pizza's</a></li><li><a href="menu.html#schotels" class="hover:text-white cursor-pointer">Schotels</a></li><li><a href="menu.html#broodjes" class="hover:text-white cursor-pointer">Broodjes</a></li></ul></div>
+        <div><h4 class="font-display text-sm mb-4">Pagina's</h4><ul class="space-y-2 text-white/60 text-sm"><li><a href="index.html" class="hover:text-white cursor-pointer">Home</a></li><li><a href="menu.html" class="hover:text-white cursor-pointer">Menu</a></li><li><a href="galerij.html" class="hover:text-white cursor-pointer">Galerij</a></li><li><a href="contact.html" class="hover:text-white cursor-pointer">Contact</a></li></ul></div>
+        <div><h4 class="font-display text-sm mb-4">Contact</h4><ul class="space-y-2 text-white/60 text-sm"><li>Stationssingel 122</li><li>5371 BB Ravenstein</li><li><a href="tel:+31486411065" class="hover:text-white cursor-pointer">0486 - 411 065</a></li></ul></div>
+      </div>
+      <div class="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-white/40 text-sm">KvK: 55013309</p>
+        <p class="text-white/40 text-sm">Gebouwd door <a href="https://www.code-lieshout.nl" class="hover:text-white cursor-pointer">Code Lieshout</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" onclick="this.classList.remove('active')">
+    <button class="absolute top-6 right-6 text-white/80 hover:text-white cursor-pointer min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Sluiten">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <img id="lightboxImg" src="" alt="Vergroot beeld">
+  </div>
+
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() { document.getElementById('mobileMenu').classList.toggle('hidden'); });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+    // Lightbox
+    document.querySelectorAll('.gallery-img').forEach(el => {
+      el.addEventListener('click', function() {
+        const img = this.querySelector('img');
+        document.getElementById('lightboxImg').src = img.src;
+        document.getElementById('lightboxImg').alt = img.alt;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active'); });
+  </script>
+</body>
+</html>

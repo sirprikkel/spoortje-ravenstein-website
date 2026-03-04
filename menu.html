@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — Bistro 't Spoortje Ravenstein</title>
+  <meta name="description" content="Bekijk het volledige menu van Bistro 't Spoortje. Pizza's, calzone, pasta's, schotels, kapsalon, broodjes, snacks en meer.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://analytics.code-lieshout.nl/script.js" data-website-id="9c93f6ff-1f08-4216-83bd-375ba359c82a"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@300;400;500;600;700&family=Playfair+Display+SC:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { primary: '#DC2626', 'primary-light': '#F87171', cta: '#CA8A04', 'cta-hover': '#A16207', cream: '#FEF2F2', dark: '#450A0A', 'warm-gray': '#78716C' },
+          fontFamily: { display: ['Playfair Display SC', 'serif'], sans: ['Karla', 'sans-serif'] },
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .animate-on-scroll { opacity: 1 !important; transform: none !important; } }
+    .animate-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+    .train-track { position: relative; height: 20px; background: repeating-linear-gradient(90deg, transparent, transparent 20px, #78716C 20px, #78716C 22px); }
+    .train-track::before, .train-track::after { content: ''; position: absolute; left: 0; right: 0; height: 3px; background: #78716C; }
+    .train-track::before { top: 4px; } .train-track::after { bottom: 4px; }
+  </style>
+</head>
+<body class="font-sans text-dark bg-cream">
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="images/logo.png" alt="Bistro 't Spoortje logo" class="h-12 w-auto">
+        <span class="font-display text-lg text-dark hidden sm:block">Bistro 't Spoortje</span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+        <a href="index.html" class="text-dark hover:text-primary transition-colors duration-200 cursor-pointer">Home</a>
+        <a href="menu.html" class="text-primary cursor-pointer">Menu</a>
+        <a href="galerij.html" class="text-dark hover:text-primary transition-colors duration-200 cursor-pointer">Galerij</a>
+        <a href="contact.html" class="text-dark hover:text-primary transition-colors duration-200 cursor-pointer">Contact</a>
+        <a href="https://www.spoortje-ravenstein.nl/order.php" target="_blank" class="bg-cta hover:bg-cta-hover text-white px-5 py-2.5 rounded-full font-semibold transition-colors duration-200 cursor-pointer min-h-[44px] flex items-center">Bestellen</a>
+      </div>
+      <button id="menuToggle" class="md:hidden cursor-pointer min-h-[44px] min-w-[44px] flex items-center justify-center" aria-label="Menu openen">
+        <svg class="w-7 h-7 text-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+      <div class="px-4 py-4 flex flex-col gap-4">
+        <a href="index.html" class="text-dark hover:text-primary cursor-pointer py-2">Home</a>
+        <a href="menu.html" class="text-primary font-medium cursor-pointer py-2">Menu</a>
+        <a href="galerij.html" class="text-dark hover:text-primary cursor-pointer py-2">Galerij</a>
+        <a href="contact.html" class="text-dark hover:text-primary cursor-pointer py-2">Contact</a>
+        <a href="https://www.spoortje-ravenstein.nl/order.php" target="_blank" class="bg-cta text-white px-5 py-3 rounded-full font-semibold text-center cursor-pointer">Bestellen</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="pt-24 pb-12 bg-dark text-white">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+      <span class="text-cta font-semibold text-sm uppercase tracking-widest">Onze Kaart</span>
+      <h1 class="font-display text-4xl md:text-5xl mt-2 mb-4">Menu</h1>
+      <p class="text-white/70 max-w-2xl mx-auto">Van krokante pizza's tot sappige schotels — bestel online of kom langs!</p>
+      <!-- Category quick nav -->
+      <div class="flex flex-wrap justify-center gap-2 mt-8">
+        <a href="#pizzas" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full text-sm transition-colors duration-200 cursor-pointer min-h-[44px] flex items-center">Pizza's</a>
+        <a href="#calzone" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full text-sm transition-colors duration-200 cursor-pointer min-h-[44px] flex items-center">Calzone</a>
+        <a href="#pastas" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full text-sm transition-colors duration-200 cursor-pointer min-h-[44px] flex items-center">Pasta's</a>
+        <a href="#schotels" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full text-sm transition-colors duration-200 cursor-pointer min-h-[44px] flex items-center">Schotels</a>
+        <a href="#kapsalon" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full text-sm transition-colors duration-200 cursor-pointer min-h-[44px] flex items-center">Kapsalon</a>
+        <a href="#broodjes" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full text-sm transition-colors duration-200 cursor-pointer min-h-[44px] flex items-center">Broodjes</a>
+        <a href="#snacks" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full text-sm transition-colors duration-200 cursor-pointer min-h-[44px] flex items-center">Snacks & Friet</a>
+        <a href="#overig" class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-full text-sm transition-colors duration-200 cursor-pointer min-h-[44px] flex items-center">Overig</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="train-track"></div>
+
+  <!-- Acties Banner -->
+  <section class="bg-cta/10 py-6">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="flex flex-wrap justify-center gap-6 text-sm font-medium">
+        <span class="flex items-center gap-2"><span class="bg-primary text-white px-2 py-0.5 rounded text-xs font-bold">DO</span> Alle pizza's €12.00</span>
+        <span class="flex items-center gap-2"><span class="bg-primary text-white px-2 py-0.5 rounded text-xs font-bold">DI</span> Alle schotels €14.00</span>
+        <span class="flex items-center gap-2"><span class="bg-primary text-white px-2 py-0.5 rounded text-xs font-bold">DO</span> Calzone €2.50 korting</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-12">
+
+    <!-- PIZZA'S -->
+    <section id="pizzas" class="mb-16 scroll-mt-20 animate-on-scroll">
+      <h2 class="font-display text-2xl md:text-3xl text-dark mb-2">Pizza's</h2>
+      <p class="text-warm-gray mb-6">Ruim 40 soorten — van klassiek tot specialiteit</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Margharita</h3><p class="text-warm-gray text-sm">kaas</p></div><span class="text-primary font-bold whitespace-nowrap">€12.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Alanya</h3><p class="text-warm-gray text-sm">kipfilet met ananas</p></div><span class="text-primary font-bold whitespace-nowrap">€16.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Delano</h3><p class="text-warm-gray text-sm">fetakaas, verse tomaat, olijven en ui</p></div><span class="text-primary font-bold whitespace-nowrap">€14.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Formaggio</h3><p class="text-warm-gray text-sm">gorgonzola, mozzarella, en fetakaas</p></div><span class="text-primary font-bold whitespace-nowrap">€14.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Roma</h3><p class="text-warm-gray text-sm">ham en salami</p></div><span class="text-primary font-bold whitespace-nowrap">€14.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Fantastica</h3><p class="text-warm-gray text-sm">ham, salami en champignons</p></div><span class="text-primary font-bold whitespace-nowrap">€14.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Quattro Stagioni</h3><p class="text-warm-gray text-sm">ham, salami, paprika en champignons</p></div><span class="text-primary font-bold whitespace-nowrap">€14.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Hawai</h3><p class="text-warm-gray text-sm">ham en ananas</p></div><span class="text-primary font-bold whitespace-nowrap">€15.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Shoarma</h3><p class="text-warm-gray text-sm">shoarma</p></div><span class="text-primary font-bold whitespace-nowrap">€15.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Tspoortje</h3><p class="text-warm-gray text-sm">shoarma, paprika en ui</p></div><span class="text-primary font-bold whitespace-nowrap">€16.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Pollo</h3><p class="text-warm-gray text-sm">kip, champignons, paprika en ui</p></div><span class="text-primary font-bold whitespace-nowrap">€16.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start border-2 border-cta"><div><h3 class="font-semibold">Pizza Ns ⭐</h3><p class="text-warm-gray text-sm">Specialiteit van het huis</p></div><span class="text-primary font-bold whitespace-nowrap">€17.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Diyar</h3><p class="text-warm-gray text-sm">shoarma, döner en kipdöner</p></div><span class="text-primary font-bold whitespace-nowrap">€16.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Pepperoni</h3><p class="text-warm-gray text-sm">paprika, pepperoni, jalapeno, ui</p></div><span class="text-primary font-bold whitespace-nowrap">€15.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Mozarella</h3><p class="text-warm-gray text-sm">mozzarella, basilicum, verse tomaat</p></div><span class="text-primary font-bold whitespace-nowrap">€14.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Frutti Di Mare</h3><p class="text-warm-gray text-sm">tonijn, mosselen, ansjovis en garnalen</p></div><span class="text-primary font-bold whitespace-nowrap">€16.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Sucuk</h3><p class="text-warm-gray text-sm">turkse worst en ei</p></div><span class="text-primary font-bold whitespace-nowrap">€16.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Hot & Spicy</h3><p class="text-warm-gray text-sm">spicy kipfilet, jalapeno, paprika en ui</p></div><span class="text-primary font-bold whitespace-nowrap">€16.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Bambino</h3><p class="text-warm-gray text-sm">kaas (klein)</p></div><span class="text-primary font-bold whitespace-nowrap">€9.50</span></div>
+      </div>
+      <p class="text-warm-gray text-sm mt-4 italic">En nog veel meer — bekijk het volledige assortiment bij het online bestellen.</p>
+    </section>
+
+    <!-- CALZONE -->
+    <section id="calzone" class="mb-16 scroll-mt-20 animate-on-scroll">
+      <h2 class="font-display text-2xl md:text-3xl text-dark mb-2">Calzone</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Calzone Shoarma</h3><p class="text-warm-gray text-sm">shoarma, ham, salami, champignons, paprika en ui</p></div><span class="text-primary font-bold whitespace-nowrap">€16.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Calzone Lamsshoarma</h3><p class="text-warm-gray text-sm">lamsshoarma, champignons, paprika en ui</p></div><span class="text-primary font-bold whitespace-nowrap">€16.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Calzone Doner</h3><p class="text-warm-gray text-sm">dönervlees, champignons, paprika en ui</p></div><span class="text-primary font-bold whitespace-nowrap">€16.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Calzone Kip</h3><p class="text-warm-gray text-sm">kip, champignons, paprika en ui</p></div><span class="text-primary font-bold whitespace-nowrap">€16.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Calzone Turbo</h3><p class="text-warm-gray text-sm">gehakt, champignons, paprika en ui</p></div><span class="text-primary font-bold whitespace-nowrap">€16.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Calzone Vegetaria</h3><p class="text-warm-gray text-sm">paprika, champignons, uien, artisjokken en asperges</p></div><span class="text-primary font-bold whitespace-nowrap">€16.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Calzone Kipdoner</h3><p class="text-warm-gray text-sm">kipdoner, champignons, paprika en ui</p></div><span class="text-primary font-bold whitespace-nowrap">€16.50</span></div>
+      </div>
+    </section>
+
+    <!-- PASTA'S -->
+    <section id="pastas" class="mb-16 scroll-mt-20 animate-on-scroll">
+      <h2 class="font-display text-2xl md:text-3xl text-dark mb-2">Pasta's</h2>
+      <p class="text-warm-gray mb-6">Bij alle pasta's krijgt u rauwkostsalade</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Spaghetti Bolognese</h3><p class="text-warm-gray text-sm">bolognesesaus en kaas</p></div><span class="text-primary font-bold whitespace-nowrap">€14.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Spaghetti Carbonara</h3><p class="text-warm-gray text-sm">roosmsaus, ham, spek, champignons en ui</p></div><span class="text-primary font-bold whitespace-nowrap">€15.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Spaghetti Kip</h3><p class="text-warm-gray text-sm">tomatensaus, champignons, paprika, ui en kip</p></div><span class="text-primary font-bold whitespace-nowrap">€16.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Spaghetti Shoarma</h3><p class="text-warm-gray text-sm">tomatensaus en shoarmavlees</p></div><span class="text-primary font-bold whitespace-nowrap">€15.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Lasagne</h3><p class="text-warm-gray text-sm"></p></div><span class="text-primary font-bold whitespace-nowrap">€15.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Spaghetti Formaggio</h3><p class="text-warm-gray text-sm">roomsaus met vier soorten kaas</p></div><span class="text-primary font-bold whitespace-nowrap">€14.50</span></div>
+      </div>
+    </section>
+
+    <!-- SCHOTELS -->
+    <section id="schotels" class="mb-16 scroll-mt-20 animate-on-scroll">
+      <h2 class="font-display text-2xl md:text-3xl text-dark mb-2">Schotels</h2>
+      <p class="text-warm-gray mb-6">Al onze schotels worden geserveerd met brood, frites, rauwkost en een saus</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Schoarma Schotel</h3></div><span class="text-primary font-bold whitespace-nowrap">€16.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Döner Schotel</h3><p class="text-warm-gray text-sm">fijn gesneden kalfsvlees</p></div><span class="text-primary font-bold whitespace-nowrap">€16.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Kipfilet Schotel</h3><p class="text-warm-gray text-sm">kipfilet met champignons, paprika en ui</p></div><span class="text-primary font-bold whitespace-nowrap">€17.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start border-2 border-cta"><div><h3 class="font-semibold">Mix Schotel ⭐</h3><p class="text-warm-gray text-sm">kipfilet, shoarma, köfte, champignons, paprika en ui</p></div><span class="text-primary font-bold whitespace-nowrap">€18.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Ravenstein Schotel</h3><p class="text-warm-gray text-sm">shoarma, champignons, paprika en ui</p></div><span class="text-primary font-bold whitespace-nowrap">€17.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Ararat Schotel</h3><p class="text-warm-gray text-sm">kip, döner, shoarma, champignons, paprika en ui</p></div><span class="text-primary font-bold whitespace-nowrap">€19.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Kipsaté Schotel</h3></div><span class="text-primary font-bold whitespace-nowrap">€16.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Spareribs Schotel</h3></div><span class="text-primary font-bold whitespace-nowrap">€17.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Köfte Schotel</h3><p class="text-warm-gray text-sm">pittig gekruid gehakt van de grill</p></div><span class="text-primary font-bold whitespace-nowrap">€16.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Lamsshoarma Schotel</h3></div><span class="text-primary font-bold whitespace-nowrap">€17.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Schnitzel Schotel</h3></div><span class="text-primary font-bold whitespace-nowrap">€16.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Diyar Schotel</h3><p class="text-warm-gray text-sm">kip, döner en shoarma</p></div><span class="text-primary font-bold whitespace-nowrap">€18.00</span></div>
+      </div>
+      <p class="text-warm-gray text-sm mt-4 italic">En nog veel meer schotels — bekijk alles bij het online bestellen.</p>
+    </section>
+
+    <!-- KAPSALON -->
+    <section id="kapsalon" class="mb-16 scroll-mt-20 animate-on-scroll">
+      <h2 class="font-display text-2xl md:text-3xl text-dark mb-2">Kapsalon</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Kapsalon Döner</h3></div><span class="text-primary font-bold whitespace-nowrap">€12.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Kapsalon Shoarma</h3></div><span class="text-primary font-bold whitespace-nowrap">€12.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Kapsalon Kipdoner</h3></div><span class="text-primary font-bold whitespace-nowrap">€12.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Kapsalon Diyar</h3><p class="text-warm-gray text-sm">met shoarma, doner en kipdoner</p></div><span class="text-primary font-bold whitespace-nowrap">€13.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Kapsalon Kipfilet</h3></div><span class="text-primary font-bold whitespace-nowrap">€12.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Kapsalon Lamsshoarma</h3></div><span class="text-primary font-bold whitespace-nowrap">€13.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Kapsalon Falafel</h3></div><span class="text-primary font-bold whitespace-nowrap">€12.50</span></div>
+      </div>
+    </section>
+
+    <!-- BROODJES -->
+    <section id="broodjes" class="mb-16 scroll-mt-20 animate-on-scroll">
+      <h2 class="font-display text-2xl md:text-3xl text-dark mb-2">Broodjes, Durum & Lahmacun</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Broodje Doner</h3></div><span class="text-primary font-bold whitespace-nowrap">€9.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Broodje Shoarma</h3></div><span class="text-primary font-bold whitespace-nowrap">€9.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Broodje Shoarma Speciaal</h3><p class="text-warm-gray text-sm">champignons, paprika en ui</p></div><span class="text-primary font-bold whitespace-nowrap">€11.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Durum Doner</h3></div><span class="text-primary font-bold whitespace-nowrap">€10.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Durum Shoarma</h3></div><span class="text-primary font-bold whitespace-nowrap">€10.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Durum Lamsshoarma</h3></div><span class="text-primary font-bold whitespace-nowrap">€11.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Lahmacun Salade</h3></div><span class="text-primary font-bold whitespace-nowrap">€7.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Lahmacun Shoarma</h3></div><span class="text-primary font-bold whitespace-nowrap">€10.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Broodje Lamsshoarma</h3></div><span class="text-primary font-bold whitespace-nowrap">€11.00</span></div>
+      </div>
+    </section>
+
+    <!-- SNACKS & FRIET -->
+    <section id="snacks" class="mb-16 scroll-mt-20 animate-on-scroll">
+      <h2 class="font-display text-2xl md:text-3xl text-dark mb-2">Snacks & Friet</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Friet Zonder</h3></div><span class="text-primary font-bold">€3.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Friet Met</h3></div><span class="text-primary font-bold">€3.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Friet Speciaal</h3></div><span class="text-primary font-bold">€4.25</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Friet Oorlog</h3></div><span class="text-primary font-bold">€4.25</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Kroket</h3></div><span class="text-primary font-bold">€3.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Frikandel</h3></div><span class="text-primary font-bold">€3.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Kipcorn</h3></div><span class="text-primary font-bold">€3.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Kaassouflé</h3></div><span class="text-primary font-bold">€3.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Kipnuggets</h3></div><span class="text-primary font-bold">€4.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Loempia</h3></div><span class="text-primary font-bold">€6.50</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Döner Box</h3><p class="text-warm-gray text-sm">doner, friet, salade en saus</p></div><span class="text-primary font-bold">€9.00</span></div>
+        <div class="bg-white rounded-xl p-5 flex justify-between items-start"><div><h3 class="font-semibold">Sigara Boregi 5st.</h3><p class="text-warm-gray text-sm">gevuld bladerdeeg met feta en peterselie</p></div><span class="text-primary font-bold">€7.50</span></div>
+      </div>
+    </section>
+
+    <!-- OVERIG -->
+    <section id="overig" class="mb-16 scroll-mt-20 animate-on-scroll">
+      <h2 class="font-display text-2xl md:text-3xl text-dark mb-2">Overig</h2>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl p-5"><h3 class="font-semibold mb-1">Uitsmijters</h3><p class="text-warm-gray text-sm">Kaas, ham of ham-kaas — vanaf €11.00</p></div>
+        <div class="bg-white rounded-xl p-5"><h3 class="font-semibold mb-1">Soep</h3><p class="text-warm-gray text-sm">Tomaten- of groentesoep — €6.00</p></div>
+        <div class="bg-white rounded-xl p-5"><h3 class="font-semibold mb-1">Salades</h3><p class="text-warm-gray text-sm">Çoban, tonijn of Ali Baba — vanaf €8.00</p></div>
+        <div class="bg-white rounded-xl p-5"><h3 class="font-semibold mb-1">Tostis & Broodjes</h3><p class="text-warm-gray text-sm">Broodje gezond, tonijn, kaas — vanaf €4.00</p></div>
+        <div class="bg-white rounded-xl p-5"><h3 class="font-semibold mb-1">Nagerechten</h3><p class="text-warm-gray text-sm">Baklava 6st. — €6.00</p></div>
+        <div class="bg-white rounded-xl p-5"><h3 class="font-semibold mb-1">Dranken</h3><p class="text-warm-gray text-sm">Frisdranken en alcoholisch — bekijk online</p></div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <div class="text-center py-8 animate-on-scroll">
+      <a href="https://www.spoortje-ravenstein.nl/order.php" target="_blank" class="bg-cta hover:bg-cta-hover text-white px-10 py-4 rounded-full text-lg font-bold transition-colors duration-200 cursor-pointer min-h-[44px] inline-flex items-center gap-3">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"/></svg>
+        Nu Online Bestellen
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div><img src="images/logo.png" alt="Bistro 't Spoortje logo" class="h-16 w-auto mb-4"><p class="text-white/60 text-sm">Pizzeria · Cafetaria · Döner · Shoarma</p></div>
+        <div><h4 class="font-display text-sm mb-4">Menu</h4><ul class="space-y-2 text-white/60 text-sm"><li><a href="menu.html#pizzas" class="hover:text-white cursor-pointer">Pizza's</a></li><li><a href="menu.html#schotels" class="hover:text-white cursor-pointer">Schotels</a></li><li><a href="menu.html#broodjes" class="hover:text-white cursor-pointer">Broodjes</a></li><li><a href="menu.html#snacks" class="hover:text-white cursor-pointer">Snacks & Friet</a></li></ul></div>
+        <div><h4 class="font-display text-sm mb-4">Pagina's</h4><ul class="space-y-2 text-white/60 text-sm"><li><a href="index.html" class="hover:text-white cursor-pointer">Home</a></li><li><a href="menu.html" class="hover:text-white cursor-pointer">Menu</a></li><li><a href="galerij.html" class="hover:text-white cursor-pointer">Galerij</a></li><li><a href="contact.html" class="hover:text-white cursor-pointer">Contact</a></li></ul></div>
+        <div><h4 class="font-display text-sm mb-4">Contact</h4><ul class="space-y-2 text-white/60 text-sm"><li>Stationssingel 122</li><li>5371 BB Ravenstein</li><li><a href="tel:+31486411065" class="hover:text-white cursor-pointer">0486 - 411 065</a></li></ul></div>
+      </div>
+      <div class="border-t border-white/10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-white/40 text-sm">KvK: 55013309</p>
+        <p class="text-white/40 text-sm">Gebouwd door <a href="https://www.code-lieshout.nl" class="hover:text-white cursor-pointer">Code Lieshout</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() { document.getElementById('mobileMenu').classList.toggle('hidden'); });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); }, { threshold: 0.1 });
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
